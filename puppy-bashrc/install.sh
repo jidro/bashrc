@@ -1,6 +1,6 @@
 #!/bin/env bash
 # Back up .bashrc to .bashrc.bak.
-mv ~/.bashrc ~/.baskrc.bak
+mv ~/.bashrc ~/.bashrc.bak
 
 # Rename puppy-bashrc to.bashrc.
 cp puppy-bashrc .bashrc

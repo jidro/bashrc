@@ -1,6 +1,6 @@
 #!/bin/env bash
 # Back up .bashrc to .bashrc.bak.
-mv ~/.bashrc ~/.baskrc.bak
+mv ~/.bashrc ~/.bashrc.bak
 
 # Rename Arch-Bashrc to.bashrc.
 cp arch-bashrc .bashrc
