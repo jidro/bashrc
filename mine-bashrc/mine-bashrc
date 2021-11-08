@@ -156,6 +156,9 @@ export XIM_PROGRAM=fcitx
 export XIM=fcitx
 export XMODIFIERS="@im=fcitx"
 
+# Soft connection of ~/.local/bin
+export PATH=~/.local/bin:$PATH
+
 # HomeBrew
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
