@@ -213,6 +213,11 @@ echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 
 # ============================================================================ #
 
+# Add etc. directories to PATH.
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt/sysimage/usr/sbin:/mnt/sysimage/bin:/mnt/sysimage/usr/bin
+
+# ============================================================================ #
+
 # iBus always on 
 # create home/user/.xprofile, add following commands
 export GTK_IM_MODULE=ibus
