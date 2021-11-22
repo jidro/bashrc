@@ -173,6 +173,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias diff='colordiff'
 #alias upclean='sudo aptitude update && sudo aptitude upgrade && sudo aptitude full-upgrade && sudo apt autoremove && sudo aptitude autoclean && sudo aptitude clean'
 
 # ============================================================================ #
