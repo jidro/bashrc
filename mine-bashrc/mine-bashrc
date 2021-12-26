@@ -218,7 +218,7 @@ echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 # ============================================================================ #
 
 # Add etc. directories to PATH.
-export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt/sysimage/usr/sbin:/mnt/sysimage/bin:/mnt/sysimage/usr/bin
+export PATH=/bin:/sbin:/usr/bin:/user/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt/sysimage/usr/sbin:/mnt/sysimage/bin:/mnt/sysimage/usr/bin
 
 # ============================================================================ #
 
