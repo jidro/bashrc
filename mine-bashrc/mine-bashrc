@@ -253,7 +253,7 @@ test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"
 # ============================================================================ #
 
 # Cargo
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 
 # ============================================================================ #
 
