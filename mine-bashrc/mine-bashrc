@@ -177,7 +177,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias diff='colordiff'
-#alias upclean='sudo aptitude update && sudo aptitude upgrade && sudo aptitude full-upgrade && sudo apt autoremove && sudo aptitude autoclean && sudo aptitude clean'
+#alias upclean='sudo aptitude update -y ; sudo aptitude upgrade -y ; sudo aptitude full-upgrade -y && sudo apt-get autoremove && sudo aptitude autoclean && sudo aptitude clean'
 
 # ============================================================================ #
 
