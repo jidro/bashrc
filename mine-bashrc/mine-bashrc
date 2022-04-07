@@ -178,6 +178,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias diff='colordiff'
 #alias upclean='sudo aptitude update -y ; sudo aptitude upgrade -y ; sudo aptitude full-upgrade -y && sudo apt-get autoremove && sudo aptitude autoclean && sudo aptitude clean'
+#alias debclean="dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P ${tty_reset}"
 
 # ============================================================================ #
 
