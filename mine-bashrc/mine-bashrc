@@ -287,6 +287,11 @@ export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt
 
 # ============================================================================ #
 
+# Lock the NmLk key
+xmodmap -e 'keycode 77 = NoSymbol Num_Lock'
+
+# ============================================================================ #
+
 # iBus always on 
 # create home/user/.xprofile, add following commands
 export GTK_IM_MODULE=ibus
