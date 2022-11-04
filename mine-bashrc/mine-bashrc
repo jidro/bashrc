@@ -328,18 +328,24 @@ export PATH=~/.local/bin:$PATH
 
 # ============================================================================ #
 
-# HomeBrew
+# HomeBrew Setting
 #test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 #test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
 #test -r ~/.profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 #test -r ~/.zprofile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zprofile
+#export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 #echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.profile
 
 # ============================================================================ #
 
-# Cargo
+# Cargo Setting
 #source $HOME/.cargo/env
+
+# ============================================================================ #
+
+# TheFuck Setting
+#eval $(thefuck --alias)
 
 # ============================================================================ #
 
