@@ -331,11 +331,20 @@ export PATH=~/.local/bin:$PATH
 # HomeBrew Setting
 #test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 #test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 #test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
 #test -r ~/.profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 #test -r ~/.zprofile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zprofile
-#export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 #echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.profile
+
+# ============================================================================ #
+
+# HomeBrew Apt Setting
+##echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/apt/bin:$PATH"' >> ~/.profile
+#export PATH="/home/linuxbrew/.linuxbrew/opt/apt/bin:$PATH"
+#export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/apt/lib"
+#export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/apt/include"
+#export PKG_CONFIG_PATH="/home/linuxbrew/.linuxbrew/opt/apt/lib/pkgconfig"
 
 # ============================================================================ #
 
