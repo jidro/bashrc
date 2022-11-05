@@ -305,21 +305,21 @@ export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt
 
 # iBus always on 
 # create home/user/.xprofile, add following commands
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-#ibus-daemon -drx
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#export QT_IM_MODULE=ibus
+##ibus-daemon -drx
 
 # ============================================================================ #
 
 # Fcitx Setting
-export LANG="zh_CN.UTF-8" # Setting Chinese locales.
-export XIM_PROGRAM=fcitx
-export XIM=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-#export XMODIFIERS=@im=fcitx
+#export LANG="zh_CN.UTF-8" # Setting Chinese locales.
+#export XIM_PROGRAM=fcitx
+#export XIM=fcitx
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+#export XMODIFIERS="@im=fcitx"
+##export XMODIFIERS=@im=fcitx
 
 # ============================================================================ #
 
