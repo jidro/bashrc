@@ -1,14 +1,8 @@
 # `bashrc`
 
-
-
 ## 中文说明：
 
-
-
 该仓库为本人搜集或本人正在使用的`bash shell`配置文件 - `bashrc`。    </br>
-
-
 
 > 其中，    </br>
 > 
@@ -28,15 +22,15 @@
 > 
 > [`mine-bashrc`](https://github.com/jidro/bashrc/tree/master/mine-bashrc "mine-bashrc")为参照以上所有的`bash shell`配置文件添加并后续会不断在其他地方参照添加不同配置的本人自用的`bash shell`配置文件。
 
-
-
-> 虽然我也知道不需要这么多的参数配置，但是毕竟本人有收集癖，还请诸君见谅。😊
-
-
+> 虽然我也知道不需要这么多的参数配置，
+> 
+> 但是毕竟本人有收集癖，
+> 
+> 还请诸君见谅。
+> 
+> 😊
 
 ### 如何使用：
-
-
 
 - ① 使用如下命令，将系统自带的`bash shell`配置文件备份：
   
@@ -62,19 +56,13 @@
   $ source ~/.bashrc
   ```
 
-
-
 ------
 
 ## 
 
 ## English description：
 
-
-
 This warehouse is a `bash shell` configuration file - `bashrc` that I collect or use    </br>
-
-
 
 > Among them    </br>
 > 
@@ -94,17 +82,15 @@ This warehouse is a `bash shell` configuration file - `bashrc` that I collect or
 > 
 > [`mine-bashrc`](https://github.com/jidro/bashrc/tree/master/mine-bashrc "mine-bashrc") In order to reference all the above `bash shell` configuration files, you will continue to add your own `bash shell` configuration files with different configurations in other places.
 
-
-
 > Although I know that I don`t need so many parameter configurations, 
 > 
-> I have a collection addiction after all. Please forgive me. 😊
-
-
+> I have a collection addiction after all. 
+> 
+> Please forgive me. 
+> 
+> 😊
 
 ### How to use：
-
-
 
 - ① Use the following command to back up the built-in `bash shell` configuration file:
   
@@ -131,3 +117,8 @@ This warehouse is a `bash shell` configuration file - `bashrc` that I collect or
   ```
 
 ------
+
+
+
+This is the end.
+That's all.
