@@ -329,9 +329,16 @@ export PATH=~/.local/bin:$PATH
 # ============================================================================ #
 
 # HomeBrew Setting
+# Homebrew Required Settings.
 #test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 #test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Homebrew Clean Up Configuration After Installing Software.
 #export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
+# Homebrew Replacement Software Source Settings
+#export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.bfsu.edu.cn/git/homebrew/brew.git"
+#export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.bfsu.edu.cn/git/homebrew/homebrew-core.git"
+#export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles"
+# Homebrew Settings That Only Need To Be Configured Once After Installation.
 #test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
 #test -r ~/.profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 #test -r ~/.zprofile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zprofile
