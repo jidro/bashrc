@@ -360,6 +360,11 @@ export PATH=~/.local/bin:$PATH
 
 # ============================================================================ #
 
+# HomeBrew Mono Setting
+#export MONO_GAC_PREFIX="/home/linuxbrew/.linuxbrew"
+
+# ============================================================================ #
+
 # Cargo Setting
 #source $HOME/.cargo/env
 
