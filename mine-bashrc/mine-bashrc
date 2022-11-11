@@ -308,7 +308,7 @@ export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
 #export QT_IM_MODULE=ibus
-##ibus-daemon -drx
+#ibus-daemon -drx
 
 # ============================================================================ #
 
@@ -318,8 +318,7 @@ export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt
 #export XIM=fcitx
 #export GTK_IM_MODULE=fcitx
 #export QT_IM_MODULE=fcitx
-#export XMODIFIERS="@im=fcitx"
-##export XMODIFIERS=@im=fcitx
+#export XMODIFIERS=@im=fcitx
 
 # ============================================================================ #
 
