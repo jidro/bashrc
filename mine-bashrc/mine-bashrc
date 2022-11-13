@@ -364,6 +364,12 @@ export PATH=~/.local/bin:$PATH
 
 # ============================================================================ #
 
+# HomeBrew bash-completion Setting
+# It is best to write this configuration to ~/.bash_profile file.
+[[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
+
+# ============================================================================ #
+
 # Cargo Setting
 #source $HOME/.cargo/env
 
