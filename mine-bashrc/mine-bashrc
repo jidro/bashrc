@@ -372,6 +372,11 @@ export PATH=~/.local/bin:$PATH
 
 # ============================================================================ #
 
+# HomeBrew pyenv-virtualenv Setting
+#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# ============================================================================ #
+
 # Cargo Setting
 #source $HOME/.cargo/env
 
