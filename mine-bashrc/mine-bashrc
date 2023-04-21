@@ -15,6 +15,50 @@
 
 # ============================================================================ #
 
+# Terminal Color Setting.
+# The color of the terminal is assigned.
+red='\[\e[0;31m\]'
+RED='\[\e[1;31m\]'
+blue='\[\e[0;34m\]'
+BLUE='\[\e[1;34m\]'
+cyan='\[\e[0;36m\]'
+CYAN='\[\e[1;36m\]'
+green='\[\e[0;32m\]'
+GREEN='\[\e[1;32m\]'
+yellow='\[\e[0;33m\]'
+YELLOW='\[\e[1;33m\]'
+PURPLE='\[\e[1;35m\]'
+purple='\[\e[0;35m\]'
+nc='\[\e[0m\]'
+
+# ============================================================================ #
+
+# Terminal Color Setting.
+# This part is the tty setting of dracula to beautify tty. 
+if [ "$TERM" = "linux" ]; then
+	printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
+	printf %b '\e[37m' '\e[8]' # set default foreground to color 7 'dracula-fg'
+	printf %b '\e]P0282a36'    # redefine 'black'          as 'dracula-bg'
+	printf %b '\e]P86272a4'    # redefine 'bright-black'   as 'dracula-comment'
+	printf %b '\e]P1ff5555'    # redefine 'red'            as 'dracula-red'
+	printf %b '\e]P9ff7777'    # redefine 'bright-red'     as '#ff7777'
+	printf %b '\e]P250fa7b'    # redefine 'green'          as 'dracula-green'
+	printf %b '\e]PA70fa9b'    # redefine 'bright-green'   as '#70fa9b'
+	printf %b '\e]P3f1fa8c'    # redefine 'brown'          as 'dracula-yellow'
+	printf %b '\e]PBffb86c'    # redefine 'bright-brown'   as 'dracula-orange'
+	printf %b '\e]P4bd93f9'    # redefine 'blue'           as 'dracula-purple'
+	printf %b '\e]PCcfa9ff'    # redefine 'bright-blue'    as '#cfa9ff'
+	printf %b '\e]P5ff79c6'    # redefine 'magenta'        as 'dracula-pink'
+	printf %b '\e]PDff88e8'    # redefine 'bright-magenta' as '#ff88e8'
+	printf %b '\e]P68be9fd'    # redefine 'cyan'           as 'dracula-cyan'
+	printf %b '\e]PE97e2ff'    # redefine 'bright-cyan'    as '#97e2ff'
+	printf %b '\e]P7f8f8f2'    # redefine 'white'          as 'dracula-fg'
+	printf %b '\e]PFffffff'    # redefine 'bright-white'   as '#ffffff'
+	clear
+fi
+
+# ============================================================================ #
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -87,15 +131,15 @@ shopt -s no_empty_cmd_completion
 # ============================================================================ #
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+#if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+#	debian_chroot=$(cat /etc/debian_chroot)
+#fi
 
 # ============================================================================ #
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+	xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # ============================================================================ #
@@ -106,104 +150,47 @@ esac
 #force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
 	# a case would tend to support setf rather than setaf.)
 	color_prompt=yes
-    else
-	color_prompt=
-    fi
+	else
+		color_prompt=
+	fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ '
-else
-    PS1='\342\224\214(Host:\H)-(User:\u)-(Time:\A)-(Dir:\w)  \n\342\224\224\342\225\274[\W]\$ '
-fi
 unset color_prompt force_color_prompt
-
-# ============================================================================ #
-
-red='\[\e[0;31m\]'
-RED='\[\e[1;31m\]'
-blue='\[\e[0;34m\]'
-BLUE='\[\e[1;34m\]'
-cyan='\[\e[0;36m\]'
-CYAN='\[\e[1;36m\]'
-green='\[\e[0;32m\]'
-GREEN='\[\e[1;32m\]'
-yellow='\[\e[0;33m\]'
-YELLOW='\[\e[1;33m\]'
-PURPLE='\[\e[1;35m\]'
-purple='\[\e[0;35m\]'
-nc='\[\e[0m\]'
-
-# ============================================================================ #
-
-# This part is the tty setting of dracula to beautify tty. 
-if [ "$TERM" = "linux" ]; then
-	printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
-	printf %b '\e[37m' '\e[8]' # set default foreground to color 7 'dracula-fg'
-	printf %b '\e]P0282a36'    # redefine 'black'          as 'dracula-bg'
-	printf %b '\e]P86272a4'    # redefine 'bright-black'   as 'dracula-comment'
-	printf %b '\e]P1ff5555'    # redefine 'red'            as 'dracula-red'
-	printf %b '\e]P9ff7777'    # redefine 'bright-red'     as '#ff7777'
-	printf %b '\e]P250fa7b'    # redefine 'green'          as 'dracula-green'
-	printf %b '\e]PA70fa9b'    # redefine 'bright-green'   as '#70fa9b'
-	printf %b '\e]P3f1fa8c'    # redefine 'brown'          as 'dracula-yellow'
-	printf %b '\e]PBffb86c'    # redefine 'bright-brown'   as 'dracula-orange'
-	printf %b '\e]P4bd93f9'    # redefine 'blue'           as 'dracula-purple'
-	printf %b '\e]PCcfa9ff'    # redefine 'bright-blue'    as '#cfa9ff'
-	printf %b '\e]P5ff79c6'    # redefine 'magenta'        as 'dracula-pink'
-	printf %b '\e]PDff88e8'    # redefine 'bright-magenta' as '#ff88e8'
-	printf %b '\e]P68be9fd'    # redefine 'cyan'           as 'dracula-cyan'
-	printf %b '\e]PE97e2ff'    # redefine 'bright-cyan'    as '#97e2ff'
-	printf %b '\e]P7f8f8f2'    # redefine 'white'          as 'dracula-fg'
-	printf %b '\e]PFffffff'    # redefine 'bright-white'   as '#ffffff'
-	clear
-fi
-
-# ============================================================================ #
-
-if [ "$UID" = 0 ]; then
-    PS1="$red\u$nc@$red\H$nc:$CYAN\w$nc\\n$red#$nc "
-else
-    PS1="$PURPLE\u$nc@$CYAN\H$nc:$GREEN\w$nc\\n$GREEN\$$nc "
-fi
-
-# ============================================================================ #
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-[aEkx]term*|rxvt*|gnome*|konsole*|interix|tmux*)
-    PS1="\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ "
-    ;;
-screen*)
-	PS1='\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ '
-	;;
-*)
-    ;;
-esac
-
-# ============================================================================ #
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
 
 # ============================================================================ #
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# ============================================================================ #
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
+# ============================================================================ #
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias dir='dir --color=auto'
+	alias vdir='vdir --color=auto'
+
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
 
 # ============================================================================ #
 
@@ -220,35 +207,24 @@ alias diff='colordiff'
 
 # ============================================================================ #
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# ============================================================================ #
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
 fi
 
 # ============================================================================ #
 
 # Set LS_COLORS environment
 if [[ ("$TERM" = *256color || "$TERM" = screen* || "$TERM" = xterm* ) && -f /etc/lscolor-256color ]]; then
-    eval $(dircolors -b /etc/lscolor-256color)
+	eval $(dircolors -b /etc/lscolor-256color)
 else
-    eval $(dircolors)
+	eval $(dircolors)
 fi
 
 # ============================================================================ #
@@ -257,15 +233,6 @@ fi
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
-
-# ============================================================================ #
-
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
 
 # ============================================================================ #
 
@@ -284,17 +251,6 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
-
-# ============================================================================ #
-
-# Add sbin directories to PATH.  This is useful on systems that have sudo
-echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
-echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
-
-# ============================================================================ #
-
-# Add etc. directories to PATH.
-export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt/sysimage/usr/sbin:/mnt/sysimage/bin:/mnt/sysimage/usr/bin:/opt/bin:/opt/sbin
 
 # ============================================================================ #
 
@@ -322,8 +278,21 @@ export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt
 
 # ============================================================================ #
 
-# Soft connection of ~/.local/bin
-export PATH=~/.local/bin:$PATH
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# ============================================================================ #
+
+# Add sbin directories to PATH.
+# This is useful on systems that have sudo
+echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
+echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
+export PATH=$HOME/.local/bin:$PATH
+export PATH=/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/mnt/sysimage/sbin:/mnt/sysimage/usr/sbin:/mnt/sysimage/bin:/mnt/sysimage/usr/bin:/opt/bin:/opt/sbin
 
 # ============================================================================ #
 
@@ -392,6 +361,51 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # ============================================================================ #
 
-# The two different formats of bash that I have beautified are actually roughly the same, except that the date display is added to the above one.
+# Custom Prompt String
+# If this is an xterm set the title to user@host:dir
+#case "$TERM" in
+#[aEkx]term*|rxvt*|gnome*|konsole*|interix|tmux*)
+#	PS1="\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ "
+#	;;
+#screen*)
+#	PS1='\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ '
+#	;;
+#*)
+#    ;;
+#esac
+
+# ============================================================================ #
+
+# Custom Prompt String
+#if [ "$color_prompt" = yes ]; then
+#	PS1='\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ '
+#else
+#	PS1='\342\224\214(Host:\H)-(User:\u)-(Time:\A)-(Dir:\w)  \n\342\224\224\342\225\274[\W]\$ '
+#fi
+
+# ============================================================================ #
+
+# Custom Prompt String
+#if [ "$UID" = 0 ]; then
+#	PS1="$red\u$nc@$red\H$nc:$CYAN\w$nc\\n$red#$nc "
+#else
+#	PS1="$PURPLE\u$nc@$CYAN\H$nc:$GREEN\w$nc\\n$GREEN\$$nc "
+#fi
+
+# ============================================================================ #
+
+# Custom Prompt String
+# The two different formats of bash that I have beautified are actually roughly the same,
+# except that the date display is added to the above one.
+# The first is the default custom prompt string for Gentoo.
+#PS1="\[\033[01;31m\]\h\[\033[01;34m\] \w \$\[\033[00m\] "
+# Secondly,the default custom prompt string of MXLinux system is presented.
+#PS1="$PURPLE\u$nc@$CYAN\H$nc:$GREEN\w$nc\\n$GREEN\$$nc "
+# Once again,the default custom prompt string of the ArchLinux system.
+#PS1='[\u@\h \W]\$ '
+# Finally,I set the custom prompt string.
+# The following is my custom prompt string,
+# which is also default custom prompt string for the bashrc.
 export PS1="\[\e[0m\]\342\224\214\[\e[32;1m\](\[\033[0m\]Host:\[\e[0;32m\]\H\[\e[32;1m\])-(\[\033[0m\]User:\[\033[1;33m\]\u\[\e[32;1m\])-(\[\033[0m\]Time:\[\033[1;35m\]\A\[\e[32;1m\])-(\[\033[0m\]Dir:\[\033[0m\]\w\[\e[32;1m\])  \n\[\e[0m\]\342\224\224\342\225\274\[\033[0m\][\W]\[\e[0m\]\$ "
 export PS2="~>"
+# The above four are my favorite bash custom prompt strings.
