@@ -79,9 +79,9 @@ fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
+HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups:erasedups
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoreboth
+#HISTCONTROL=ignoreboth
 
 # ============================================================================ #
 
@@ -275,6 +275,13 @@ unset rc
 #export GTK_IM_MODULE=fcitx
 #export QT_IM_MODULE=fcitx
 #export XMODIFIERS=@im=fcitx
+
+# ============================================================================ #
+
+# EXPORT Setting
+export EDITOR='nano'
+export VISUAL='nano'
+export PAGER='most'
 
 # ============================================================================ #
 
