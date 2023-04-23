@@ -259,6 +259,11 @@ unset rc
 
 # ============================================================================ #
 
+# ignore upper and lowercase when TAB completion
+#bind "set completion-ignore-case on"
+
+# ============================================================================ #
+
 # iBus always on 
 # create home/user/.xprofile, add following commands
 #export GTK_IM_MODULE=ibus
@@ -291,6 +296,18 @@ then
 	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
+
+# ============================================================================ #
+
+# Add /bin in the home directory as the default path.
+
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
 
 # ============================================================================ #
 
