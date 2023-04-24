@@ -164,11 +164,6 @@ unset color_prompt force_color_prompt
 
 # ============================================================================ #
 
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# ============================================================================ #
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -236,11 +231,6 @@ fi
 
 # ============================================================================ #
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# ============================================================================ #
-
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
 	for rc in ~/.bashrc.d/*; do
@@ -264,29 +254,40 @@ unset rc
 
 # ============================================================================ #
 
+# EXPORT Setting
+export EDITOR='nano'
+export VISUAL='nano'
+export PAGER='most'
+
+# Setting Chinese locales.
+#export LANG="zh_CN.UTF-8"
+
+# Fcitx Setting
+#export XMODIFIERS=@im=fcitx
+#export GTK_IM_MODULE=fcitx
+#export SDL_IM_MODULE=fcitx
+#export GLFW_IM_MODULE=ibus
+#export INPUT_METHOD=fcitx
+#export QT_IM_MODULE=fcitx
+#export XIM_PROGRAM=fcitx
+#export XIM=fcitx
+
 # iBus always on 
 # create home/user/.xprofile, add following commands
-#export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
+#export GTK_IM_MODULE=ibus
 #export QT_IM_MODULE=ibus
 #ibus-daemon -drx
 
 # ============================================================================ #
 
-# Fcitx Setting
-#export LANG="zh_CN.UTF-8" # Setting Chinese locales.
-#export XIM_PROGRAM=fcitx
-#export XIM=fcitx
-#export GTK_IM_MODULE=fcitx
-#export QT_IM_MODULE=fcitx
-#export XMODIFIERS=@im=fcitx
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # ============================================================================ #
 
-# EXPORT Setting
-export EDITOR='nano'
-export VISUAL='nano'
-export PAGER='most'
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
 
 # ============================================================================ #
 
