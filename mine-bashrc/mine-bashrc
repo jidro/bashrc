@@ -263,10 +263,11 @@ export PAGER='most'
 #export LANG="zh_CN.UTF-8"
 
 # Fcitx Setting
+##export GLFW_IM_MODULE=ibus
+#export GLFW_IM_MODULE=fcitx
 #export XMODIFIERS=@im=fcitx
 #export GTK_IM_MODULE=fcitx
 #export SDL_IM_MODULE=fcitx
-#export GLFW_IM_MODULE=ibus
 #export INPUT_METHOD=fcitx
 #export QT_IM_MODULE=fcitx
 #export XIM_PROGRAM=fcitx
